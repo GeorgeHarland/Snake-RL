@@ -37,16 +37,16 @@ class QTrainer:
         next_state = torch.tensor(next_state, dtype=torch.float)
         action = torch.tensor(action, dtype=torch.long)
         reward = torch.tensor(reward, dtype=torch.float)
-        gameover = torch.tensor(reward, dtype=torch.float)
+        #gameover = torch.tensor(reward, dtype=torch.float)
         # (n, x)
 
         if len(previous_state.shape) == 1:
             # (1, x)
-            state = torch.unsqueeze(previous_state, 0)
+            previous_state = torch.unsqueeze(previous_state, 0)
             next_state = torch.unsqueeze(next_state, 0)
             action = torch.unsqueeze(action, 0)
             reward = torch.unsqueeze(reward, 0)
-            gameover = torch.unsqueeze(gameover, 0)
+            gameover = (gameover, )
 
         # 1: predicted Q values with current state
         pred = self.model(previous_state)

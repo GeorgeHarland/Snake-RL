@@ -22,7 +22,7 @@ BODY_COLOUR_2 = (190, 0, 190)
 BG_COLOUR = (200, 255, 200)
 
 BLOCK_SIZE = 20
-SPEED = 20
+SPEED = 100
 
 class Game:
 

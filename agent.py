@@ -1,4 +1,3 @@
-from pandas import IntervalDtype
 import torch
 import random
 import numpy as np
